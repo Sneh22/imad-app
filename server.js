@@ -24,7 +24,7 @@ date:'August14,2017',
 content:`<p>This is my second article.This is my first article.This is my first article
          This is my first article.This is my first article</p>`},
          
-'articl-three':{
+'article-three':{
 title:'Article-Three',
 heading:'Article THREE',
 date:'August15,2017',
