@@ -9,8 +9,54 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articleOne={
+title:'Article-one',
+heading:'Article ONE',
+date:'August13,2017',
+content:`<p>This is my first article.This is my first article.This is my first article
+         This is my first article.This is my first article</p>`
+};
+
+function createtemplate(data){
+    var title=data.title;
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
+    
+var htmlTemplate=`
+<html>
+    <head>
+        ${title}
+        <link href="/ui/style.css" rel="stylesheet" />
+        
+    </head>
+        <body>
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <div>
+                ${date}
+                </div>
+                <div class="cont">
+            <div>
+           ${heading}
+           ${content}
+            
+            </div>
+            </div>
+        </body>
+</html>
+
+
+`;
+return htmlTemplate;
+}
+
+
+
+
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createtemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
